@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    background-image: url("../images/wheat.png");
+   
+}
+
+.container {
+    font-family: 'Merriweather', serif;
+}

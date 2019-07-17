@@ -3,75 +3,35 @@
     <head>
         <title>Psychic Game</title>
         <meta charset="UTF-8">
+        
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+
 
     </head>
 
     <body>
-
-        <div>
-        <h1>Psychic Game</h1>
-        <p>Guess what letter I'm thinking of...</p>
-        <p id="wins-text">Wins: </p>
-        <p id="losses-text">losses: </p>
-        <p id="guesscount-text">Guesses left: </p>
-        <p id="yourguess-text">Your guesses so far: </p>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class= "container">
+        <span class="navbar-brand mb-0 h1">Psychic Game</span>
+        </div>
+    </nav>
+    
+    
+        <div class="container mt-5 p-3 mb-2 bg-dark text-white">
+            <h1>Guess what letter I'm thinking of...</h1>
+            <br>
+            <p id="wins-text">Wins: </p>
+            <p id="losses-text">losses: </p>
+            <p id="guesscount-text">Guesses left: </p>
+            <p id="yourguess-text">Your guesses so far: </p>
         </div>
 
-
-        <script type="text/javascript">
-        
-        // <!-- // computer choose random letter -->
-        var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        
-        var wins = 0;
-        var losses = 0;
-        var guesses = 9;
-
-        var winsText = document.getElementById("wins-text");
-        var lossesText = document.getElementById("losses-text");
-        var guessesText = document.getElementById("guesscount-text");
-        var yourGuessText = document.getElementById("yourguess-text");
-
-
-        // <!-- // user prees key to guess the letter -->
-        var computerChoice = options[Math.floor(Math.random()*options.length)];
-            console.log("Computer Choice is " + computerChoice);
-        
-            document.onkeyup = function(event) {
-            var userGuess = event.key.toLowerCase(); 
-            console.log("my guess: " + userGuess);
-
-
-        //   <!-- // compare computer's choice and user's guess-->  
-            if (computerChoice === userGuess) {
-                wins++;
-                return;
-            }
-            else {
-               guesses--;
-            }
-
-            if (guesses === 0) {
-                losses++
-                return;
-            }
-
-            winsText.textContent = "Wins: " + wins;
-            lossesText.textContent = "Losses: " + losses;
-            guessesText.textContent = "Guesses Left: " + guesses;
-            yourGuessText.textContent = "Your Guesses so far: " + event.key;
-        }
-
-        
-        // <!-- // if computer's choice and user's guess is same letter, user wins -->
-        // <!-- // game starts over -->
-        // <!-- // if computer's choice and user's guess is not same, user can guess again -->
-        // <!-- // user can guess up to 9 times -->
-        // <!-- // after 9 times, if user guess is not same as computer's guess, user lose -->
-        // <!-- // game starts over -->
-        
-        </script>
-        
+        <script src = "assets/javascript/game.js"></script>
 
     </body>
 </html>
